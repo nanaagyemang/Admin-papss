@@ -1,0 +1,49 @@
+<div class="main-content">
+  <div>
+    <div class="container-fluid">
+      <div class="">
+        <div class="col-md-12">
+          <div class="card">
+            <div class="card-header card-header-danger">
+              <h4 class="card-title">List of Uploaded Products</h4>
+              <p class="card-category">Products</p>
+            </div>
+            <div class="card-body">
+              <div class="table-responsive">
+                <table class="table">
+                  <thead class="text-primary">
+                    <tr>
+                      <th>Product Name</th>
+                      <th>Category</th>
+                      <th>Weight</th>
+                      <th>Price</th>
+                      <th>Action</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr *ngFor="let item of data">
+                      <td>{{ item?.name }}</td>
+                      <td>{{ item?.category }}</td>
+                      <td>{{ item?.weight }}</td>
+                      <td>{{ item?.cost }}</td>
+                      <td>
+                        <button
+                          mat-raised-button
+                          type="submit"
+                          class="btn btn-danger btn-round btn-just-icon"
+                        >
+                          <i class="material-icons">edit</i>
+                          <div class="ripple-container"></div>
+                        </button>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

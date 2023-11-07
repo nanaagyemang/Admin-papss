@@ -1,0 +1,418 @@
+<div class="main-content">
+  <div class="container-fluid">
+    <div class="body">
+      <!-- <ng-select [items]="cars" 
+           bindLabel="name" 
+           bindValue="id" 
+           [(ngModel)]="selectedCar">
+</ng-select> -->
+
+      <!-- <div class="notice-top-bar bg-primary" data-sticky-start-at="100">
+            <button class="hamburguer-btn hamburguer-btn-light notice-top-bar-close m-0 active" data-set-active="false">
+                <span class="close">
+                    <span></span>
+                    <span></span>
+                </span>
+            </button>
+        </div> -->
+
+      <div role="main" class="main">
+        <section
+          class="page-header page-header-modern bg-color-light-scale-1 page-header-lg"
+        >
+          <div class="container">
+            <div class="row">
+              <div
+                class="col-md-8 order-2 order-md-1 align-self-center p-static"
+              >
+                <h1 class="text-color-dark font-weight-bold">
+                  Register Company (Supplier)
+                </h1>
+              </div>
+              <div class="col-md-4 order-1 order-md-2 align-self-center">
+                <ul class="breadcrumb d-flex justify-content-md-end text-3-5">
+                  <li>
+                    <a
+                      href=""
+                      class="text-color-dark text-color-hover-primary text-decoration-none"
+                      >HOME</a
+                    >
+                  </li>
+                  <li class="active">> REGISTER COMPANY</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <div class="container my-5 pt-4 pb-5">
+          <div class="row">
+            <div class="col">
+              <form  (ngSubmit)="onSubmit()"
+                class="contact-form custom-form-style-1"
+                enctype="multipart/form-data" 
+              >
+                <div
+                  class="contact-form-success alert alert-success d-none mt-4"
+                >
+                  <strong>Success!</strong> Your registration has been sent to
+                  us.
+                </div>
+
+                <div class="contact-form-error alert alert-danger d-none mt-4">
+                  <strong>Error!</strong> There was an error sending your
+                  registration.
+                  <span class="mail-error-message text-1 d-block"></span>
+                </div>
+
+                <div class="row">
+                  <div class="col">
+                    <h2 class="text-color-dark font-weight-bold text-4-5 mb-3">
+                      Company Information:
+                    </h2>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="form-group col-md-6">
+                    <input
+                      type="text"
+                      value=""
+                      data-msg-required="Please enter your commpany name."
+                      maxlength="100"
+                      class="form-control"
+                      name="compName"
+                      id="compName"
+                      required
+                      placeholder="Company/Institution Name"
+                      [(ngModel)]="formData.name"
+                    />
+                  </div>
+                  <div class="form-group col-md-6">
+                    <input
+                      type="text"
+                      value=""
+                      data-msg-required="Please enter your company address."
+                      maxlength="300"
+                      class="form-control"
+                      name="compAddress"
+                      id="compAddress"
+                      required
+                      placeholder="Company Address"
+                      [(ngModel)]="formData.address"
+                    />
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="form-group col-md-6">
+                    <input
+                      type="email"
+                      value=""
+                      data-msg-required="Please enter your email address."
+                      data-msg-email="Please enter a valid email address."
+                      maxlength="100"
+                      class="form-control"
+                      name="email"
+                      id="email"
+                      required
+                      placeholder="E-mail Address"
+                      [(ngModel)]="formData.email"
+                    />
+                  </div>
+                  <div class="form-group col-md-6">
+                    <input
+                      type=""
+                      value=""
+                      data-msg-required="Please enter your phone number."
+                      maxlength="100"
+                      class="form-control"
+                      name="phone"
+                      id="phone"
+                      required
+                      placeholder="Phone"
+                      [(ngModel)]="formData.phone"
+                    />
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="form-group col-md-6 mb-3">
+                    <input
+                      type="text"
+                      value=""
+                      data-msg-required="Please select a category"
+                      data-msg-email="Please enter a category"
+                      maxlength="100"
+                      class="form-control"
+                      name="category"
+                      id="category"
+                      required
+                      placeholder="Category"
+                      [(ngModel)]="formData.category_name"
+                    />
+                  </div>
+                  <div class="form-group col-md-6 mb-3">
+                    <input
+                      type="text"
+                      value=""
+                      data-msg-required="Please any keywords associated to your business"
+                      maxlength="100"
+                      class="form-control"
+                      name="keywords"
+                      id="keywords"
+                      required
+                      placeholder="Keywords"
+                      [(ngModel)]="formData.keywords"
+                    />
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="form-group col-md-6 mb-3">
+                    <input
+                      type="text"
+                      value=""
+                      data-msg-required="Please any keywords associated to your business"
+                      maxlength="100"
+                      class="form-control"
+                      name="keywords"
+                      id="keywords"
+                      required
+                      placeholder="Country"
+                      [(ngModel)]="formData.country"
+                    />
+                  </div>
+                  <div class="form-group col-md-6 mb-3">
+                    <input
+                      type="text"
+                      value=""
+                      data-msg-required="Please enter your company description "
+                      data-msg-email="Please enter a description"
+                      maxlength="100"
+                      class="form-control"
+                      name="description"
+                      id="description"
+                      required
+                      placeholder="Description"
+                      [(ngModel)]="formData.description"
+                    />
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col">
+                    <h2 class="text-color-dark font-weight-bold text-4-5 mb-3">
+                      Personal Information (Contact Person):
+                    </h2>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="form-group col-md-6 mb-3">
+                    <input
+                      type="text"
+                      value=""
+                      data-msg-required="Please enter your first name."
+                      maxlength="100"
+                      class="form-control"
+                      name="firstName"
+                      id="firstName"
+                      required
+                      placeholder="First Name"
+                      [(ngModel)]="formData.person_first_name"
+                    />
+                  </div>
+                  <div class="form-group col-md-6 mb-3">
+                    <input
+                      type="text"
+                      value=""
+                      data-msg-required="Please enter your last name."
+                      maxlength="100"
+                      class="form-control"
+                      name="lastName"
+                      id="lastName"
+                      required
+                      placeholder="Last Name"
+                      [(ngModel)]="formData.person_last_name"
+                    />
+                  </div>
+                </div>
+                <div class="row mb-3">
+                  <div class="form-group col-md-6 mb-3">
+                    <input
+                      type="email"
+                      value=""
+                      data-msg-required="Please enter your email address."
+                      data-msg-email="Please enter a valid email address."
+                      maxlength="100"
+                      class="form-control"
+                      name="email"
+                      id="email"
+                      required
+                      placeholder="E-mail Address"
+                      [(ngModel)]="formData.person_email"
+                    />
+                  </div>
+                  <div class="form-group col-md-6 mb-3">
+                    <input
+                      type="email"
+                      value=""
+                      data-msg-required="Please enter your phone."
+                      maxlength="100"
+                      class="form-control"
+                      name="phone"
+                      id="phone"
+                      required
+                      placeholder="Phone"
+                      [(ngModel)]="formData.person_phone"
+                    />
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col">
+                    <h3 class="text-color-dark font-weight-bold text-4-5 mb-3">
+                      Tell Us About Your Company/Institution:
+                    </h3>
+                  </div>
+                </div>
+                <div class="row mb-3">
+                  <div class="form-group col-6">
+                    <!-- <textarea maxlength="5000" data-msg-required="Please enter your reason." rows="10"
+                                        class="form-control" name="reason" id="reason" required></textarea> -->
+                    <textarea
+                    type="text"
+                    class="form-control"
+                    id="image"
+                    name="services"
+                    [(ngModel)]="formData.services">
+
+                    </textarea>
+                  </div>
+                </div>
+                <div class="row mb-3">
+                  <div class="col mb-3">
+                    <label for="formFile" class="form-label">
+                      <h3
+                        class="text-color-dark font-weight-bold text-4-5 mb-3"
+                        required
+                      >
+                        Kindly upload your business certificate
+                      </h3>
+                    </label>
+                    <div class="col-6">
+                        <input
+                        type="file"
+                        class="form-control"
+                        id="image"
+                        name="certificate"
+                        (change)="onFileSelected($event)"
+                        required
+                      />
+                    </div>
+                  </div>
+                  
+                  
+                </div>
+                <!-- <div class="row mb-3">
+                                <div class="form-group col-md-6 mb-3">
+                                    <input type="email" value="" data-msg-required="Please enter your email address."
+                                        data-msg-email="Please enter a valid email address." maxlength="100"
+                                        class="form-control" name="email" id="email" required
+                                        placeholder="E-mail Address">
+                                </div>
+                                <div class="form-group col-md-6 mb-3">
+                                    <input type="email" value="" data-msg-required="Please enter your phone."
+                                        maxlength="100" class="form-control" name="phone" id="phone" required
+                                        placeholder="Phone">
+                                </div>
+                            </div> -->
+                <div class="row pb-2 mb-4">
+                  <div class="col">
+                    <div class="">
+                      <p class="text-2 mb-0">
+                        <button
+                          mat-raised-button
+                          type="submit"
+                          class="btn btn-danger btn-round btn-just-icon"
+                        >
+                          <i class="material-icons">priority_high</i>
+                          <div class="ripple-container"></div>
+                        </button>
+                        Please note that after your details is received, a
+                        background check will be done on the details provied by
+                        Bsystems to confirm you meet the eligibilty criteria for
+                        this trade platform.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-6">
+                    <button
+                      type="submit"
+                      class="btn btn-danger btn-modern font-weight-bold custom-btn-border-radius custom-btn-arrow-effect-1 text-3 px-5 py-3"
+                      data-loading-text="Loading..."
+                    >
+                      SUBMIT
+                      <svg
+                        class="ms-2"
+                        version="1.1"
+                        viewBox="0 0 15.698 8.706"
+                        width="17"
+                        xml:space="preserve"
+                        xmlns="http://www.w3.org/2000/svg"
+                        xmlns:xlink="http://www.w3.org/1999/xlink"
+                      >
+                        <polygon
+                          stroke="#FFF"
+                          stroke-width="0.1"
+                          fill="#FFF"
+                          points="11.354,0 10.646,0.706 13.786,3.853 0,3.853 0,4.853 13.786,4.853 10.646,8 11.354,8.706 15.698,4.353 "
+                        />
+                      </svg>
+                      <app-loader
+                    *ngIf="loadingService.isLoadingStatus()"
+                  ></app-loader>
+                    </button>
+                  </div>
+
+                  <div class="col-6 loader">
+                   
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+
+        <!-- <section class="section bg-transparent position-relative border-0 z-index-1 m-0 p-0">
+                <div class="container py-4">
+                    <h3 class="text-transform-none font-weight-bold text-5 mt-2 mb-0 text-center">Supported By:
+                    </h3>
+                    <div class="row align-items-center text-center py-5">
+    
+                        <br>
+                        <div class="col-sm-4 col-lg-4 mb-5 mb-lg-0">
+                            <img src="assets/afreximbank.svg" alt class="img-fluid" style="max-width: 90px;" />
+                        </div>
+                        <div class="col-sm-4 col-lg-4 mb-5 mb-lg-0">
+                            <img src="assets/african-union-en-v2.svg" alt class="img-fluid" style="max-width: 140px;" />
+                        </div>
+                        <div class="col-sm-4 col-lg-4 mb-5 mb-lg-0">
+                            <img src="assets/afcfta-en-v2.svg" alt class="img-fluid" style="max-width: 140px;" />
+                        </div>
+                    </div>
+                </div>
+                <svg class="custom-svg-3" version="1.1" xmlns="http://www.w3.org/2000/svg"
+                    xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 193 495">
+                    <path fill="#1C5FA8"
+                        d="M193,25.73L18.95,247.93c-13.62,17.39-10.57,42.54,6.82,56.16L193,435.09V25.73z" />
+                    <path fill="none" stroke="#FFF" stroke-width="1.5" stroke-miterlimit="10"
+                        d="M196,53.54L22.68,297.08c-12.81,18-8.6,42.98,9.4,55.79L196,469.53V53.54z" />
+                </svg>
+            </section>
+     -->
+  
+      
+      </div>
+    </div>
+  </div>
+
+  
+</div>

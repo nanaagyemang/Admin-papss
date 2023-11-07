@@ -1,0 +1,131 @@
+<div class="main-content">
+  <div>
+    <div class="container-fluid">
+        <div class="card-body">
+            <div class="col">
+                <div class="row-md-6">
+                    <div class="row">
+                        <div class="col-3">
+                            <div class="alert alert-info">
+                                <span>Companies Registered</span>
+            
+                                    <i class="material-icons large-icon m-2">business</i>
+                        
+                                
+                            </div>
+                        </div>
+                        <div class="col-3">
+                            <div class="alert alert-info">
+                                <span>Reps Registered</span>
+                                <i class="material-icons large-icon m-2">group</i>
+                            </div>
+                        </div>
+                        <div class="col-3">
+                            <div class="alert alert-info">
+                                <span>Total Products Upload</span>
+                                <i class="material-icons large-icon m-2">inventory</i>
+                            </div>
+                        </div>
+                        <div class="col-3">
+                            <div class="alert alert-info">
+                                <span>Verified Comapnies</span>
+                                <i class="material-icons large-icon m-2">verified</i>
+                            </div>
+                        </div>
+                    </div>
+                    
+                 
+                </div>
+               
+            </div>
+            <div class="">
+                <div class="col-md-12">
+                    <div class="card">
+                        <div class="card-header card-header-danger">
+                            <h4 class="card-title "> Registered Companies</h4>
+                            <p class="card-category"> Here is a list of all companies</p>
+                        </div>
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="table">
+                                    <thead class=" text-primary">
+                                        <tr>
+                                            <th>Name</th>
+                                            <th>Country</th>
+                                            <th>Services</th>
+                                            <th>Email</th>
+                                            <th>Phone</th>
+                                            <th>Description</th>
+                                            <th>Action</th>
+                                          </tr> 
+                                    </thead>
+                                    <tbody>
+                                       
+                                        <tr *ngFor="">
+                                            <td>{{ item?.name}}</td>
+                                            <td>{{ item?.selectedCountry }}</td>
+                                            <td>{{ item?.services }}</td>
+                                            <td>{{ item?.email}}</td>
+                                            <td>{{item?.phone}}</td>
+                                            <td>{{item?.description}}</td>
+                                            <td><button mat-raised-button type="submit" class="btn btn-danger btn-round btn-just-icon">
+                                              <i class="material-icons">close</i>
+                                              <div class="ripple-container"></div>
+                                          </button></td>
+                                          </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="">
+                    <div class="col-md-12">
+                        <div class="card">
+                            <div class="card-header card-header-danger">
+                                <h4 class="card-title "> Registered Representatives</h4>
+                                <p class="card-category"> Here is a list of all Representatives</p>
+                            </div>
+                            <div class="card-body">
+                                <div class="table-responsive">
+                                    <table class="table">
+                                        <thead class=" text-primary">
+                                            <tr>
+                                                <th>Name</th>
+                                                <th>Country</th>
+                                                <th>City</th>
+                                                <th>Email</th>
+                                                <th>Mobile</th>
+                                                <th>Education Level</th>
+                                                <th>Nationality</th>
+                                                <th>Action</th>
+                                              </tr> 
+                                        </thead>
+                                        <tbody>
+                                           
+                                            <tr *ngFor="">
+                                                <td>{{ item?.name}}</td>
+                                                <td>{{ item?.birth_country }}</td>
+                                                <td>{{ item?.city }}</td>
+                                                <td>{{ item?.email}}</td>
+                                                <td>{{item?.mobile}}</td>
+                                                <td>{{item?.education_level}}</td>
+                                                <td>{{item?.first_nationality}}</td>
+                                                <td><button mat-raised-button type="submit" class="btn btn-danger btn-round btn-just-icon">
+                                                  <i class="material-icons">close</i>
+                                                  <div class="ripple-container"></div>
+                                              </button></td>
+                                              </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                  
+            </div>
+        </div>
+    </div>
+  </div>
+</div>

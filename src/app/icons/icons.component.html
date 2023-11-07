@@ -1,0 +1,143 @@
+
+<div class="main-content">
+  
+<div class="card">
+                        <div class="card-header">
+                            <h4 class="card-title mb-0 flex-grow-1">Product Upload</h4>
+                        </div>
+                        <div class="card-body">
+                            <form class="contact-form custom-form-style-1"
+                            enctype="multipart/form-data"
+                            (ngSubmit)="onSubmit()"
+                            >
+                            <div class="row mb-3">
+                                <div class="col-md-4">
+                                    <div>
+                                        <label for="basiInput" class="form-label">Product Name</label>
+                                        <input type="text" class="form-control" name="product_name" id="basiInput" [(ngModel)]="formData.name">
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div>
+                                        <label for="basiInput" class="form-label">SKU</label>
+                                        <input type="text" class="form-control" name="sku" id="basiInput" [(ngModel)]="formData.sku">
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div>
+                                        <label for="basiInput" class="form-label">Category</label>
+                                        <input type="text" class="form-control" name="unit"
+                                            placeholder="eg: sack, piece, sachet etc" id="basiInput" [(ngModel)]="formData.category">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <div class="col-md-4">
+                                    <div>
+                                        <label for="basiInput" class="form-label">Weight</label>
+                                        <input type="text" class="form-control" name="category"
+                                            placeholder="eg: Agriculture, Pharmaceuticals etc" id="basiInput" [(ngModel)]="formData.weight">
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div>
+                                        <label for="formFile" class="form-label">Product Image</label>
+                                        <input class="form-control" type="file" id="formFile"  (change)="onFileSelected2($event)"
+                                        name="image">
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div>
+                                        <label for="formFile" class="form-label">Product Brochure</label>
+                                        <input class="form-control" type="file" id="formFile"
+                                        (change)="onFileSelected($event)"
+                                        name="brochure">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row mb-3">
+                                <div class="col-md-4">
+                                    <div>
+                                        <label for="basiInput" class="form-label">Unit</label>
+                                        <input type="text" class="form-control" placeholder="" name="weight"
+                                            id="basiInput" [(ngModel)]="formData.unit">
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div>
+                                        <label for="exampleFormControlTextarea5" class="form-label">Description</label>
+                                        <textarea class="form-control" name="description"
+                                            id="exampleFormControlTextarea5" rows="2" [(ngModel)]="formData.description"></textarea>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div>
+                                        <label for="basiInput" class="form-label">Selling Price Tax Type</label>
+                                        <select class="form-control mb-3" [(ngModel)]="tax_type" value="Inclusive"
+                                            aria-label="Default select example">
+                                            <option selected>Click to select tax type</option>
+                                            <option value="1">Inclusive</option>
+                                            <option value="2">Exclusive</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <div class="col-md-4">
+                                    <div>
+                                        <label for="basiInput" class="form-label">Product Type</label>
+                                        <select class="form-control mb-3" name="product_type"
+                                            aria-label="Default select example" [(ngModel)]="type" value="Combo">
+                                            <option selected>Combo</option>
+                                            <option value="1">Single</option>
+                                            <option value="2">Variable</option>
+                                            <option value="3">Combo</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                
+                                <div class="col-md-4">
+                                    <div>
+                                        <label for="basiInput" class="form-label">Product Cost</label>
+                                        <input type="text" class="form-control" placeholder="" name="cost"
+                                            id="basiInput" [(ngModel)]="formData.cost">
+                                    </div>
+                                </div>
+                                <div class="form-group col-md-2 mb-3">
+                                    <h4>Availability</h4>
+                                    <div class="form-check form-check-inline">
+                                      <input
+                                        class=""
+                                        type="radio"
+                                        name="inlineRadioOptions"
+                                        id="inlineRadio1"
+                                        value="Yes"
+                                        [(ngModel)]="formData.availability"
+                                      />
+                                      <label class="form-check-label" for="inlineRadio1"
+                                        >Yes</label
+                                      >
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                      <input
+                                        class=""
+                                        type="radio"
+                                        name="inlineRadioOptions"
+                                        id="inlineRadio2"
+                                        value="No"
+                                        [(ngModel)]="formData.availability"
+                                      />
+                                      <label class="form-check-label" for="inlineRadio2"
+                                        >No</label
+                                      >
+                                    </div>
+                                  </div>
+                            </div>
+                            <button type="submit" class="btn btn-success btn-animation waves-effect waves-light"
+                                ><span>Submit</span></button>
+                            </form>
+                        </div>
+                    </div>
+
+</div>
